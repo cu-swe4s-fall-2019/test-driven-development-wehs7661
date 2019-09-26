@@ -22,7 +22,7 @@ class TestMathLib(unittest.TestCase):
             self.assertAlmostEqual(r, e)
 
     def test_list_mean_exceptions(self):
-        self.assertRaises(TypeError, math_lib.list_mean, 'a')
+        self.assertRaises(TypeError, math_lib.list_mean, [1,1,1,'X'])
 
 if __name__ == "__main__":
     unittest.main()
