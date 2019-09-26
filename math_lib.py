@@ -4,7 +4,12 @@ def list_mean(L):
         return None
     if len(L) == 0:
         return None
-    return sum(L)/len(L)
+    try:
+        mean = sum(L)/len(L)
+    except TypeError:
+        raise TypeError('Unsupported value in the list')
+
+    return mean
 
 def list_stdev(L):
     return None
