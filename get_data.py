@@ -21,7 +21,7 @@ def read_stdin_col(col_num):
     for l in sys.stdin:
         col = l.splitlines()[0].split()
         try:
-            data = col[col_num - 1]
+            data = float(col[col_num - 1])
         except IndexError:
             raise IndexError('Invalid column number')
         except TypeError:
