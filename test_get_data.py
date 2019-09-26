@@ -1,7 +1,5 @@
 import unittest
 import get_data
-import os
-import sys
 
 
 class TestGetData(unittest.TestCase):
