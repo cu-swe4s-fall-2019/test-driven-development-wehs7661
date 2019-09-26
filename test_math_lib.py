@@ -22,7 +22,9 @@ class TestMathLib(unittest.TestCase):
             self.assertAlmostEqual(r, e)
 
     def test_list_mean_exceptions(self):
-        self.assertRaises(TypeError, math_lib.list_mean, [1,1,1,'X'])
+        with self.assertRaises(TypeError) as ex:
+            math_lib.list_mean([1, 1, 1, 'x'])
+        self.assertTrue('Unsupported value in the list' in str(ex.exception))
 
 if __name__ == "__main__":
     unittest.main()
