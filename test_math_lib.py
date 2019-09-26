@@ -21,5 +21,8 @@ class TestMathLib(unittest.TestCase):
             e = statistics.mean(L)
             self.assertAlmostEqual(r, e)
 
+    def test_list_mean_exceptions(self):
+        self.assertRaises(TypeError, math_lib.list_mean, 'a')
+
 if __name__ == "__main__":
     unittest.main()
