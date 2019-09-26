@@ -1,6 +1,7 @@
 
 def list_mean(L):
-    return None
+    if L is None:
+        return None
 
 def list_stdev(L):
     return None
