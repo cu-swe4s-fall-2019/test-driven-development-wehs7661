@@ -30,7 +30,10 @@ class TestMathLib(unittest.TestCase):
         r = math_lib.list_stdev(None)
         self.assertEqual(r, None)
 
-    
+    def test_list_stdev_const(self):
+        r = math_lib.list_stdev([1,1,1,1])
+        self.assertEqual(r, 0)
+        
 
 if __name__ == "__main__":
     unittest.main()
