@@ -18,5 +18,5 @@ def list_stdev(L):
     if len(L) == 0:
         return None
     m = sum(L)/len(L)
-    std = math.sqrt(sum([(m - x) ** 2 for x in L]) / len(L))
+    std = math.sqrt(sum([(m - x) ** 2 for x in L]) / (len(L) - 1))
     return std
