@@ -26,5 +26,11 @@ class TestMathLib(unittest.TestCase):
             math_lib.list_mean([1, 1, 1, 'x'])
         self.assertTrue('Unsupported value in the list' in str(ex.exception))
 
+    def test_list_stdev_empty(self):
+        r = math_lib.list_stdev(None)
+        self.assertEqual(r, None)
+
+    
+
 if __name__ == "__main__":
     unittest.main()
