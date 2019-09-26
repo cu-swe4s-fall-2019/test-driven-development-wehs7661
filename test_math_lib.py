@@ -33,7 +33,17 @@ class TestMathLib(unittest.TestCase):
     def test_list_stdev_const(self):
         r = math_lib.list_stdev([1,1,1,1])
         self.assertEqual(r, 0)
-        
+
+    def test_list_stdev_rand(self):
+        L = []
+        for j in range(100):
+            for i in range(10):
+                L.append(random.random())
+            r = math_lib.list_stdev(L)
+            e = statistics.stdev(L)
+            self.assertAlmostEqual(r, e)
+    
+
 
 if __name__ == "__main__":
     unittest.main()
