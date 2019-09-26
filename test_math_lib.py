@@ -42,6 +42,11 @@ class TestMathLib(unittest.TestCase):
             r = math_lib.list_stdev(L)
             e = statistics.stdev(L)
             self.assertAlmostEqual(r, e)
+            
+    def test_list_stdev_exceptions(self):
+        with self.assertRaises(TypeError) as ex:
+            math_lib.list_stdev([1, 1, 1, 'x'])
+        self.assertTrue('Unsupported value in the list' in str(ex.exception))
     
 
 
