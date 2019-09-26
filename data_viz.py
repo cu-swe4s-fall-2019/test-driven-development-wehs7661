@@ -25,4 +25,10 @@ def histogram(L, out_file_name):
     pass
 
 def combo(L, out_file_name):
+    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
+    axs[0].boxplot(L)
+    axs[1].hist(L, bins=20)
+    fig.suptitle('Mean: %6.2f, Standard deviation: %6.2f' % (math_lib.list_mean(L), math_lib.list_stdev(L)))
+    fig.savefig(out_file_name, dpi = 300)
+    plt.close('all')
     pass
