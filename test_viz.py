@@ -1,8 +1,15 @@
 import unittest
-import data_viz
 import get_data
-import os
 import viz
+
+class TestViz(unittest.TestCase):
+    def test_viz_column_exceptions(self):
+        with self.assertRaises(IndexError) as ex:
+            get_data.read_stdin_col(5)
+        self.assertTrue('Invalid column number' in str(ex.exception))
+        with self.assertRaises(TypeError) as ex:
+            get_data.read_stdin_col('X')
+        self.assertTrue('Wrong data type of input' in str(ex.exception))
 
 
 class ParserTest(unittest.TestCase):
@@ -16,8 +23,8 @@ class ParserTest(unittest.TestCase):
         """
         parsed = self.parser.parse_args(['-t', 'boxplot', '-c', '2', '-n', 'boxplot.png'])
         self.assertEqual(parsed.type, 'boxplot')
-        self.assertEqual(parser.col_num, '2')
-        self.assertEqual(parser.output_name, 'boxplot.png')
+        self.assertEqual(parsed.col_num, '2')
+        self.assertEqual(parsed.output_name, 'boxplot.png')
 
 if __name__ == '__main__':
     unittest.main()
