@@ -27,7 +27,7 @@ class ParserTest(unittest.TestCase):
         parsed = self.parser.parse_args(
             ['-t', 'boxplot', '-c', '2', '-n', 'boxplot.png'])
         self.assertEqual(parsed.type, 'boxplot')
-        self.assertEqual(parsed.col_num, '2')
+        self.assertEqual(parsed.col_num, 2)
         self.assertEqual(parsed.output_name, 'boxplot.png')
 
 

@@ -9,20 +9,28 @@ This is a repository for Assignment 3 of the course Software Engineering for Sci
 - `test_get_data.py`: a Python code for unit testing of `get_data.py`
 - `data_viz.py`: a Python module which includes several plotting methods
 - `test_data_viz.py`: a Python code for unit testing of `data_viz.py` 
+- `viz.py`: the main program for reading in data and save a plot
+- `test_viz.py`: a Python code for unit testing of `viz.py`
 
 
 ## Installation
-All the Python scripts are written in Python 3 and the packages required to run the codes include: `math`, `unittest`, `random`, `sys`, and `statistics`.
+All the Python scripts are written in Python 3 and the packages required to run the codes include: `math`, `unittest`, `random`, `sys`, `statistics`, `matplotlib` and `argparse`.
 
 ## Usage
 - Execution of the main program
+To run the main program `viz.py`, run the command
+```
+bash gen_data.sh | python viz.py -t [type] -c [col_num] -n [output_name]
+```
 
 - Unit testing 
   - To test `math_lib.py`, run the command `python test_math_lib.py`
   - To test `get_data.py`, run the command `bash gen_data.sh | python test_get_data.py`
   - To test `data_viz.py`, run the command `bash gen_data.sh | python test_data_viz.py`
+  - To test `viz.py`, run the command `bash gen_data.sh | python test_viz.py`
 
 - Functional testing
+No functional tests are required in this assignment. 
 
 
 ## Changes made upon the starter code of Assignment 3
@@ -32,3 +40,5 @@ All the Python scripts are written in Python 3 and the packages required to run 
 - Created `test_get_data.py`, which is a Python code including 2 test methods for the unit testing of `get_data.py`
 - Created `data_viz.py`, which is a library including several plotting methods
 - Created `test_data_viz.py`, which is a Python code for unit testing of `data_viz.py`
+- Created `viz.py`, which is the main program for reading in the data and save a plot
+- Created `test_viz.py`, which is a Python code for unit testing of `viz.py`
