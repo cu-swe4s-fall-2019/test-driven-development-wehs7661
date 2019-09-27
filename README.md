@@ -42,3 +42,4 @@ No functional tests are required in this assignment.
 - Created `test_data_viz.py`, which is a Python code for unit testing of `data_viz.py`
 - Created `viz.py`, which is the main program for reading in the data and save a plot
 - Created `test_viz.py`, which is a Python code for unit testing of `viz.py`
+- Modified `.travis.yml` to pass TravisCI
