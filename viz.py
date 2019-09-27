@@ -3,6 +3,7 @@ import sys
 import get_data
 import data_viz
 
+
 def initialize():
     """Initialize the code by taking arguments from the command line
 
@@ -27,7 +28,7 @@ def initialize():
                         '--type',
                         type=str,
                         help='The type of the plot to be generated. Options: '
-                        'boxplot, histogram and combo', 
+                        'boxplot, histogram and combo',
                         required=True)
 
     parser.add_argument('-n',
@@ -39,7 +40,7 @@ def initialize():
 
     parser.add_argument('-c',
                         '--col_num',
-                        type=str,
+                        type=int,
                         help='The column number',
                         required=True)
 
@@ -49,6 +50,7 @@ def initialize():
 
     return args
 
+
 def main():
     args = initialize().parse_args(sys.argv[1:])  # sys.args[0]: program name
 
@@ -56,11 +58,11 @@ def main():
     try:
         L = get_data.read_stdin_col(int(args.col_num))
     except IndexError:
-            raise IndexError('Invalid column number')
-            sys.exit(1)
+        raise IndexError('Invalid column number')
+        sys.exit(1)
     except TypeError:
-            raise TypeError('Wrong data type of input')
-            sys.exit(1)
+        raise TypeError('Wrong data type of input')
+        sys.exit(1)
 
     if (args.type == 'histogram'):
         data_viz.histogram(L, args.output_name)
@@ -71,18 +73,6 @@ def main():
     else:
         print('Invalid plot type')
         sys.exit(1)
-    
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
