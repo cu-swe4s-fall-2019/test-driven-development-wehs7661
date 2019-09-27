@@ -30,7 +30,7 @@ bash gen_data.sh | python viz.py -t [type] -c [col_num] -n [output_name]
   - To test `viz.py`, run the command `bash gen_data.sh | python test_viz.py`
 
 - Functional testing
-No functional tests are required in this assignment. 
+  - No functional tests are required in this assignment. 
 
 
 ## Changes made upon the starter code of Assignment 3
