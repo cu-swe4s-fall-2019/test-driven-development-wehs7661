@@ -14,7 +14,7 @@ def boxplot(L, out_file_name):
     plt.title('Mean: %6.2f, Standard deviation: %6.2f' %
               (math_lib.list_mean(L), math_lib.list_stdev(L)))
     plt.savefig(out_file_name, dpi=300)
-    plt.close('all')
+    plt.show()
     pass
 
 
@@ -29,7 +29,7 @@ def histogram(L, out_file_name):
     plt.title('Mean: %6.2f, Standard deviation: %6.2f' %
               (math_lib.list_mean(L), math_lib.list_stdev(L)))
     plt.savefig(out_file_name, dpi=300)
-    plt.close('all')
+    plt.show()
     pass
 
 
@@ -38,11 +38,18 @@ def combo(L, out_file_name):
     histogram with given data and save it with the
     file name specified by the user
     """
-    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
-    axs[0].boxplot(L)
-    axs[1].hist(L, bins=20)
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
+    plt.subplot(1, 2, 1)
+    plt.boxplot(L)
+    plt.xlabel('Value')
+    plt.ylabel('Distribution')
+
+    plt.subplot(1, 2, 2)
+    plt.hist(L, bins=20)
+    plt.xlabel('Value')
+    plt.ylabel('Frequency')
     fig.suptitle('Mean: %6.2f, Standard deviation: %6.2f' %
                  (math_lib.list_mean(L), math_lib.list_stdev(L)))
     fig.savefig(out_file_name, dpi=300)
-    plt.close('all')
+    plt.show()
     pass
